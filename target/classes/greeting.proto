@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package com.tnpay.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.tnpay.grpc.generated";
+option java_outer_classname = "MessageProto";
+
+service GreetingService {
+  rpc greeting(GreetingRequest) returns (GreetingResponse) {
+  }
+}
+
+message GreetingRequest {
+  string message = 1;
+}
+
+message GreetingResponse {
+  string message = 1;
+}
