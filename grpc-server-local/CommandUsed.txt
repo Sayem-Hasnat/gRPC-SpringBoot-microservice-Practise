@@ -1,0 +1,3 @@
+  grpcurl --plaintext localhost:9898 list
+  grpcurl --plaintext localhost:9898 list com.hasnat.grpc.GreetingService
+  grpcurl --plaintext -d '{"message": "How are you?"}' localhost:9898 com.hasnat.grpc.GreetingService.greeting
