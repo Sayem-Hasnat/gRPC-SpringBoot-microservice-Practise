@@ -1,7 +1,6 @@
 
 package com.hasnat.grpcclientlocal.controller;
 
-import com.hasnat.grpc.generated.GreetingResponse;
 import com.hasnat.grpcclientlocal.service.GrpcClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

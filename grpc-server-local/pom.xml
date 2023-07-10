@@ -21,13 +21,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
-			<!--greeting message module-->
+			<!--greeting message module dependency-->
 		<dependency>
 			<groupId>com.hasnat</groupId>
 			<artifactId>message-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
+		<!-- gRPC server dependency -->
 		<dependency>
 			<groupId>net.devh</groupId>
 			<artifactId>grpc-server-spring-boot-starter</artifactId>
