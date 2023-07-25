@@ -21,12 +21,17 @@ com/hasnat/proto/greetings/GreetingServiceGrpc$GreetingServiceBlockingStub.class
 com/hasnat/proto/bankservice/BankServiceGrpc$2.class
 com/hasnat/proto/bankservice/BalanceRequestOrBuilder.class
 com/hasnat/proto/person/AddressOrBuilder.class
+com/hasnat/proto/bankservice/WithdrawRequestOrBuilder.class
 com/hasnat/proto/bankservice/Balance$1.class
 com/hasnat/proto/bankservice/BankServiceGrpc$BankServiceBaseDescriptorSupplier.class
 com/hasnat/proto/greetings/GreetingServiceGrpc$GreetingServiceImplBase.class
 com/hasnat/proto/person/Person.class
 com/hasnat/proto/person/Address$1.class
+com/hasnat/proto/bankservice/WithdrawRequest.class
+com/hasnat/proto/bankservice/WithdrawRequest$Builder.class
+com/hasnat/proto/bankservice/Money$1.class
 com/hasnat/proto/bankservice/BankServiceGrpc$BankServiceFutureStub.class
+com/hasnat/proto/bankservice/WithdrawRequest$1.class
 com/hasnat/proto/bankservice/BankServiceGrpc$MethodHandlers.class
 com/hasnat/proto/bankservice/BankServiceGrpc.class
 com/hasnat/proto/bankservice/BankServiceGrpc$BankServiceFileDescriptorSupplier.class
@@ -35,6 +40,7 @@ com/hasnat/proto/bankservice/BalanceOrBuilder.class
 com/hasnat/proto/person/PersonOuter.class
 com/hasnat/proto/greetings/GreetingServiceGrpc$2.class
 com/hasnat/proto/person/Car.class
+com/hasnat/proto/bankservice/Money$Builder.class
 com/hasnat/proto/bankservice/Balance.class
 com/hasnat/proto/greetings/GreetingRequest.class
 com/hasnat/proto/greetings/GreetingServiceGrpc$GreetingServiceBaseDescriptorSupplier.class
@@ -45,8 +51,10 @@ com/hasnat/proto/person/Address.class
 com/hasnat/proto/greetings/GreetingServiceGrpc$GreetingServiceFileDescriptorSupplier.class
 com/hasnat/proto/greetings/GreetingServiceGrpc$MethodHandlers.class
 com/hasnat/proto/greetings/GreetingServiceGrpc.class
+com/hasnat/proto/bankservice/Money.class
 com/hasnat/proto/greetings/GreetingRequestOrBuilder.class
 com/hasnat/proto/person/Person$Builder.class
+com/hasnat/proto/bankservice/MoneyOrBuilder.class
 com/hasnat/proto/bankservice/BankServiceGrpc$3.class
 com/hasnat/proto/greetings/GreetingResponseOrBuilder.class
 com/hasnat/proto/greetings/MessageProto.class

@@ -14,8 +14,23 @@
     int32 account_number = 2;
   }
 
+  message WithdrawRequest{
+    int32 account_number = 1;
+    int32  requested_amount = 2;
+      }
+
+      message Money{
+    int32 withdrawal_money = 1;
+    int32 availableBalance = 2;
+      }
+
   service  BankService{
+    //unary service
     rpc getBalance(BalanceRequest) returns (Balance);
+
+    //server side streaming service
+    rpc withdraw(WithdrawRequest) returns (stream Money);
+
   }
 
 
