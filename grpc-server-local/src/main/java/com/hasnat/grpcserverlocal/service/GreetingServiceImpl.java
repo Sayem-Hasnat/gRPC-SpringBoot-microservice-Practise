@@ -1,8 +1,8 @@
 package com.hasnat.grpcserverlocal.service;
 
-import com.hasnat.grpc.generated.GreetingRequest;
-import com.hasnat.grpc.generated.GreetingResponse;
-import com.hasnat.grpc.generated.GreetingServiceGrpc;
+import com.hasnat.proto.greetings.GreetingRequest;
+import com.hasnat.proto.greetings.GreetingResponse;
+import com.hasnat.proto.greetings.GreetingServiceGrpc;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 

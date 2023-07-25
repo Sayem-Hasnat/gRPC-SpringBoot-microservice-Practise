@@ -1,0 +1,23 @@
+  syntax = "proto3";
+
+  option java_multiple_files = true;
+  option java_package = "com.hasnat.proto.bankservice";
+
+  // client will request by account number on this format to get Balance
+  message BalanceRequest{
+    int32 account_number = 1;
+  }
+
+  //server will response this
+  message Balance {
+    int32  amount = 1;
+    int32 account_number = 2;
+  }
+
+  service  BankService{
+    rpc getBalance(BalanceRequest) returns (Balance);
+  }
+
+
+
+

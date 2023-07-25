@@ -3,7 +3,7 @@ syntax = "proto3";
 package com.hasnat.grpc;
 
 option java_multiple_files = true;
-option java_package = "com.hasnat.grpc.generated";
+option java_package = "com.hasnat.proto.greetings";
 option java_outer_classname = "MessageProto";
 
 service GreetingService {

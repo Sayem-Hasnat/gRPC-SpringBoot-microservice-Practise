@@ -1,8 +1,9 @@
 package com.hasnat.grpcclientlocal.service;
 
-import com.hasnat.grpc.generated.GreetingRequest;
-import com.hasnat.grpc.generated.GreetingResponse;
-import com.hasnat.grpc.generated.GreetingServiceGrpc;
+import com.hasnat.proto.bankservice.BankServiceGrpc;
+import com.hasnat.proto.greetings.GreetingRequest;
+import com.hasnat.proto.greetings.GreetingResponse;
+import com.hasnat.proto.greetings.GreetingServiceGrpc;
 import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.client.inject.GrpcClient;
@@ -23,4 +24,6 @@ public class GrpcClientService {
             return "FAILED with " + e.getStatus().getCode().name();
         }
     }
+
+
 }

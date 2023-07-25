@@ -6,6 +6,8 @@ option java_package = "com.hasnat.proto.person";
 option java_outer_classname = "PersonOuter";
 
 
+// composition demo
+
 
     message Car {
       string make = 1;
