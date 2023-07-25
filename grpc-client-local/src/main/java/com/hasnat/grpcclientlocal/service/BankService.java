@@ -1,5 +1,6 @@
 package com.hasnat.grpcclientlocal.service;
 
+import com.hasnat.grpcclientlocal.dto.BalanceResponse;
 import com.hasnat.proto.bankservice.Balance;
 import com.hasnat.proto.bankservice.BalanceRequest;
 import com.hasnat.proto.bankservice.BankServiceGrpc;
@@ -11,15 +12,17 @@ public class BankService {
     @GrpcClient("grpc-server-local")
     private BankServiceGrpc.BankServiceBlockingStub bankServiceBlockingStub; // blockingStub used for Uniray call
 
-    public Balance getBalance(int accountNumber) {
+    public BalanceResponse getBalance(int accountNumber) {
         BalanceRequest balanceRequest = BalanceRequest.newBuilder()
                 .setAccountNumber(accountNumber)
                 .build();
         final Balance balance = this.bankServiceBlockingStub.getBalance(balanceRequest);
         System.out.println("balance" + balance);
-        Balance balanceResponse = Balance.newBuilder().setAccountNumber(balance.getAccountNumber())
-                .setAmount(balance.getAmount())
-                .build();
+        BalanceResponse balanceResponse = new BalanceResponse(balance.getAccountNumber(),balance.getAccountNumber());
+           /*     BalanceResponse.builder()
+                .balanceAmount()
+                .accountNumber()
+                .build();*/
         return balanceResponse;
     }
 }

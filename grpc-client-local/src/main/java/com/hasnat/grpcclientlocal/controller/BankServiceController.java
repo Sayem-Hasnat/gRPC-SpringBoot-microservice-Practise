@@ -1,5 +1,6 @@
 package com.hasnat.grpcclientlocal.controller;
 
+import com.hasnat.grpcclientlocal.dto.BalanceResponse;
 import com.hasnat.grpcclientlocal.service.BankService;
 import com.hasnat.proto.bankservice.Balance;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,7 @@ public class BankServiceController {
     private BankService bankService;
 
    @GetMapping(value = "client/{accountNumber}")
-    public Balance getBalance(@PathVariable int accountNumber) {
+    public BalanceResponse getBalance(@PathVariable int accountNumber) {
         return bankService.getBalance(accountNumber);
     }
 }
