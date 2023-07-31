@@ -1,11 +1,9 @@
 package com.hasnat.grpcclientlocal.service;
 
-import com.hasnat.proto.bankservice.BankServiceGrpc;
 import com.hasnat.proto.greetings.GreetingRequest;
 import com.hasnat.proto.greetings.GreetingResponse;
 import com.hasnat.proto.greetings.GreetingServiceGrpc;
 import io.grpc.StatusRuntimeException;
-import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
 

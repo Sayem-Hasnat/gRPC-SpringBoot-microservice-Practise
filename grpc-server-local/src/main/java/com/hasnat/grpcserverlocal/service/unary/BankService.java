@@ -9,6 +9,7 @@ import net.devh.boot.grpc.server.service.GrpcService;
 @GrpcService
 public class BankService extends BankServiceGrpc.BankServiceImplBase {
 
+    //Unary RPC
     @Override
     public void getBalance(BalanceRequest balanceRequest, StreamObserver<Balance> responseObserver) {
         int accountNumber = balanceRequest.getAccountNumber();
@@ -22,6 +23,7 @@ public class BankService extends BankServiceGrpc.BankServiceImplBase {
         responseObserver.onCompleted();
     }
 
+    //Client-streaming RPC
     @Override
     public void withdraw(WithdrawRequest request, StreamObserver<Money> responseObserver) {
         int accountNumber = request.getAccountNumber();

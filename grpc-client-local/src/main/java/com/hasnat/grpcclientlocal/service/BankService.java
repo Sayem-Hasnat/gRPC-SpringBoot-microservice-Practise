@@ -3,16 +3,15 @@ package com.hasnat.grpcclientlocal.service;
 import com.hasnat.grpcclientlocal.dto.BalanceResponse;
 import com.hasnat.grpcclientlocal.dto.ClientWithdrawRequest;
 import com.hasnat.grpcclientlocal.dto.MoneyStreamingResponse;
-import com.hasnat.proto.bankservice.*;
+import com.hasnat.proto.bankservice.Balance;
+import com.hasnat.proto.bankservice.BalanceRequest;
+import com.hasnat.proto.bankservice.BankServiceGrpc;
+import com.hasnat.proto.bankservice.WithdrawRequest;
 import net.devh.boot.grpc.client.inject.GrpcClient;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.concurrent.CountDownLatch;
-import java.util.stream.Stream;
 
 @Service
 public class BankService {
