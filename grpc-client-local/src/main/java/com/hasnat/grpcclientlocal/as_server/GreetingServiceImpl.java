@@ -1,4 +1,4 @@
-package com.hasnat.grpcclientlocal.service;
+package com.hasnat.grpcclientlocal.as_server;
 
 import com.hasnat.proto.greetings.GreetingRequest;
 import com.hasnat.proto.greetings.GreetingResponse;
