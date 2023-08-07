@@ -39,6 +39,13 @@
 			<artifactId>grpc-server-spring-boot-starter</artifactId>
 			<version>2.12.0.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>io.grpc</groupId>
+			<artifactId>grpc-services</artifactId>
+			<version>1.56.1</version>
+			<scope>runtime</scope>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

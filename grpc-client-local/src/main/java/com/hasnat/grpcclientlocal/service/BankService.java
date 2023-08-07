@@ -2,7 +2,6 @@ package com.hasnat.grpcclientlocal.service;
 
 import com.hasnat.grpcclientlocal.dto.BalanceResponse;
 import com.hasnat.grpcclientlocal.dto.ClientWithdrawRequest;
-import com.hasnat.grpcclientlocal.dto.MoneyStreamingResponse;
 import com.hasnat.proto.bankservice.Balance;
 import com.hasnat.proto.bankservice.BalanceRequest;
 import com.hasnat.proto.bankservice.BankServiceGrpc;
@@ -41,7 +40,7 @@ public class BankService {
         this.bankServiceBlockingStub.withdraw(withdrawRequestToServer)
                 .forEachRemaining(m -> System.out.println(m + "localTime "+ LocalTime.now()));
         CountDownLatch latch = new CountDownLatch(1);
-        this.bankServiceStub.withdraw(withdrawRequestToServer, new MoneyStreamingResponse());
+        this.bankServiceStub.withdraw(withdrawRequestToServer, new MoneyStreamObserver());
 
 
     }
