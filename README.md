@@ -1,5 +1,20 @@
+
 <details>
-	<summary>gRPC Resource :</summary>
+	<summary>What is gRPC :</summary> 
+RPC is an open-source remote procedure call framework created by Google in 2016, which enables one machine to invoke code on another machine as if it is a local function call. It is popular due to its thriving developer ecosystem and its high performance out of the box. more here: https://www.youtube.com/watch?v=gnchfOojMk4
+ 
+#### 🌐 gRPC is an open-source remote procedure call framework created by Google in 2016.
+#### 🚀 gRPC has a thriving developer ecosystem and makes it easy to develop production-quality and type-safe APIs.
+#### 🔄 gRPC uses Protocol Buffers as its data interchange format, which provides several advantages and supports strongly typed schema definitions.
+#### 📚 Protocol Buffers provide broad tooling support to turn the schema defined in the proto file into data access classes for all popular programming languages.
+#### ⚡ gRPC is high-performance due to Protocol Buffers' efficient binary encoding format and its use of HTTP/2 streams. 
+#### 👥 gRPC is the preferred inter-service communication mechanism between microservices in data centers and is increasingly used in native mobile clients.
+#### ❌ gRPC currently has limited support in web browsers, but it is possible to make gRPC calls from a browser with the help of a proxy technology called gRPC-Web.
+
+</details>
+
+<details>
+	<summary>gRPC Resource </summary>
 
 ### What is RPC? gRPC Introduction : https://www.youtube.com/watch?v=gnchfOojMk4
 ### gRPC vs REST Performance Comparison : https://www.vinsguru.com/grpc-vs-rest-performance-comparison/
