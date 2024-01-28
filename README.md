@@ -343,3 +343,123 @@ public class BankService {
 
 
 
+
+
+##  gRPC Server Configuration Issue fixing with SpringBoot 3+
+
+<details>
+	<summary>Step 01 : Add GrpcServer class </summary>
+
+ ````ruby
+
+import io.grpc.Server;
+import io.grpc.ServerBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+
+/**
+ * @author sayem hasnat
+ * This class encapsulates the logic for starting, stopping, and blocking until
+ * the gRPC server is terminated.
+ */
+
+@Component
+public class GrpcServer {
+
+    private static final Logger logger = LoggerFactory.getLogger(GrpcServer.class);
+
+    private Server server;
+    /**
+     * Starts the gRPC server on the specified port.
+     *
+     * @param port The port on which the gRPC server will listen for incoming requests.
+     */
+    public void start(int port) {
+        try {
+            server = ServerBuilder.forPort(port)
+                    .addService(new MerchantOnBoardServiceImpl())
+                    .build()
+                    .start();
+
+            logger.info("gRPC server started on port: " + port);
+
+            // Register a shutdown hook to gracefully shut down the gRPC server
+            Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+                logger.info("Shutting down gRPC server");
+                stop();
+            }));
+        } catch (IOException e) {
+            logger.error("Failed to start gRPC server", e);
+        }
+    }
+
+    /**
+     * Stops the gRPC server.
+     */
+    public void stop() {
+        if (server != null) {
+            server.shutdown();
+        }
+    }
+
+    /**
+     * Blocks until the gRPC server is terminated.
+     */
+    public void blockUntilShutdown() {
+        try {
+            if (server != null) {
+                server.awaitTermination();
+            }
+        } catch (InterruptedException e) {
+            logger.error("Error while waiting for server termination", e);
+        }
+    }
+}
+
+````
+
+</details>
+
+
+
+
+<details>
+	<summary>Step 02 : Add GrpcServerRunner class which will implement CommandLineRunner </summary>
+
+ ````ruby
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+/**
+ * @author sayem hasnat
+ * {@code GrpcServerRunner} is a Spring {@code CommandLineRunner} component
+ * responsible for starting the gRPC server during application initialization.
+ * It retrieves the gRPC server bean and triggers its startup.
+ */
+@Component
+public class GrpcServerRunner implements CommandLineRunner {
+
+
+    private final GrpcServer grpcServer;
+
+    @Value("${grpc.server.port}")
+    private int GRPC_SERVER_PORT;
+
+    public GrpcServerRunner(GrpcServer grpcServer) {
+        this.grpcServer = grpcServer;
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        grpcServer.start(GRPC_SERVER_PORT);
+        grpcServer.blockUntilShutdown();
+    }
+}
+````
+
+</details>
